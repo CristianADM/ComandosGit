@@ -98,3 +98,5 @@ usamos el comando: eval $(ssh-agent -s) el cual nos retornara el PID del proceso
 3. Una vez sabemos que el servidor de llaves funciona procedemos agregarla al sistema operativo
 por medio del comando: ssh-add /c/users/cadm/.ssh/id_rsa la ubicacion de la llave puede cambiar en las 
 maquinas.
+
+Cambios en el archivo
