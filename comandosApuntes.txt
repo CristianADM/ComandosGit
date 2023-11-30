@@ -1,0 +1,100 @@
+En la consola de comandos de git se usa un guion(-) en los comandos para especificar que sigue una letra
+cuando se usan dos guiones(--) se especifica que sigue una palabra.
+
+Stage: es un espacio en donde se almacenan mis archivos para ser enviados en el commit.
+
+Comandos:
+* git init: me inicializa el proyecto es decir para que git le empiece a hacer
+	el seguimiento
+
+* git status: me muestra cuales archivos han sido cambiados.
+
+* git add nombrearchivo.extension: Me agrega el archivo al stage 
+
+* git commit -m "mensaje commit": Me crea un commit con los cambios realizados en mis archivos
+	es buena practiva agregarle un mensaje descriptivo acerca de los cambios realizados para 
+	en un futuro recordar que cambios se realizaron.
+	
+	-am "mensaje": me permite saltarme el git add para hacer el commite (solo funciona para archivos que
+	ya se les haya realizado seguimiento si es nuevo no funciona.)
+	
+* git config --list: para ver la lista de configuraciones que se han realizado en git.
+
+* git config --global user.name "Cristian Duarte": Configuramos el usuario de git.
+
+* git config --global user.email "cristianduarte@cristianduarte.cd": Configuramos el correo para git.
+
+* git log: para ver el historial de commits realizados.
+	se le puede agregar --stat para ver la cantidad de insersiones o el numero de cosas quitadas en los commits
+	en los archivos especificos
+	--all --graph me muestra un grafico de las ramas y de los commits.
+	--all --graph --decorate --oneline me muestra todo mas comprimido.
+
+* git show nombrearchivo: me muestra los cambios que ha tenido el archivo a partir del ultimo commit. 
+
+* git diff idcommit idcommitviejo: se usa para ver las diferencias entre un commit especifico y otro mas viejo.
+
+* git reset idcommit: Me permite volver en el tiempo a una version del proyecto 
+	existen 2 tipos de reset el --hard (me borra todos los cambios realizados que llevo)
+	y el --soft (me mantiene los cambios que esten en el stagging).
+	--mixed()
+	Volvemos al pasado sin la posibilidad de volver al futuro.
+	
+* git checkout idcommit nombrearchivo: Me permite ir a la version de un commit en especifico del pasado, por si se desea ver
+	o por si se quieren realizar cambios. Para volver al commit actual solo es cambiar el idcommit por master.
+	Volvemos al pasado con la posibilidad de volver al futuro.
+	
+* git branch nombreRama: para crear una rama nueva.
+
+* git checkout nombreRama: para cambiarme de rama.
+
+* git branch -l: para listar las ramas que tengo creadas. 
+
+* git merge nombreRama: para cambiarme fusionar cambios en las ramas debo de estar en la rama que quiero que 
+	que continue su ciclo de vida y llamar a la rama que quiero fusionar.
+	Desde que no haya conflictos el merge sera automatico.
+	
+* git remote add origin https://direccion.con: me permite agregar un origen del repositorio es decir para actualizar o mandar
+	mis cambios o el de otras personas al repositorio remoto origin puede ser opcional pero es el nombre
+	que comumente se le da.
+	-v me permite consultar la url del origen.
+	
+* git branch -m main: para cambiar el nombre de una rama.
+
+* git remote rm origin: me permite eliminar el origin configurado.
+
+* git pull origin main: me trae los cambios del repositorio remoto a la rama especificada.
+	git pull tambien sirve para traer ramas del repositorio remoto
+	--allow-unrelated-histories: para que me traiga cambios de historias no relacionadas
+
+* git push: me envia mis cambios a la al repositorio remoto.
+
+* alias nombreComando="comando completo ej: git push": para crear alias a comandos muy largos
+
+* git tag -a v0.1 -m "Resultado de las primeras clases del curso." 9225cdd: Para crear tags de mi proyecto
+	un tag es para especificar una version del proyecto.
+	
+	Los tags para que se vean reflejados en el repositorio remoto se debe hacer un push con.
+	git push origin --tags
+
+* git tag: Para ver la lista de tags.
+
+* git tag -d nombretagaborrar: Comando para borrar un tag en local.
+
+* git push origin :refs/tags/dormigo: para hacer que se refleje en el repositorio remoto el borrar un tag.
+
+* git show-ref --tags: me muestra el commit relacionado al tag 
+
+* git show-branch --all: para ver informacion de las ramas
+
+* gitk: me abre una interfaz grafica relacionada con las ramas.
+
+*git clone urlRepositorioRemoto: Para Clonar un repositorio remoto.
+
+----- GENERAR UNA LLAVE PUBLICA/PRIVADA -----
+1. En la consola ssh-keygen -t rsa -b 4096 -C "crduarte99@gmail.com"
+2. para poder usar la llave hay que verificar que el servidor de llaves del sistema esta operando
+usamos el comando: eval $(ssh-agent -s) el cual nos retornara el PID del proceso
+3. Una vez sabemos que el servidor de llaves funciona procedemos agregarla al sistema operativo
+por medio del comando: ssh-add /c/users/cadm/.ssh/id_rsa la ubicacion de la llave puede cambiar en las 
+maquinas.
