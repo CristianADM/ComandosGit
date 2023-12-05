@@ -99,4 +99,14 @@ usamos el comando: eval $(ssh-agent -s) el cual nos retornara el PID del proceso
 por medio del comando: ssh-add /c/users/cadm/.ssh/id_rsa la ubicacion de la llave puede cambiar en las 
 maquinas.
 
-Cambios en el archivo
+
+Anotaciones 
+	- Siempre que se vaya a realizar un PUSH a un repositorio hay que hacer un pull
+		para traer las actualizaciones realizadas. 
+		
+	- En un entorno profesional es mejor hacer siempre el pull request en el repositorio remoto. 
+	
+	- Cuando trabajamos con ramas realizamos nuestros cambios, actualizamos el repositorio local
+		antes de hacer los commits, realizamos los commits de nuestros cambios y hacemos el push,
+		si debemos unir nuestros cambios con alguna rama nos pasamos a la rama que queremos llevar
+		los cambios, la actualizamos y hacemos merge con la rama que contiene nuestros cambios. 
