@@ -45,10 +45,10 @@ Comandos:
 	Volvemos al pasado con la posibilidad de volver al futuro.
 	
 * git branch nombreRama: para crear una rama nueva.
+* git branch -l: para listar las ramas que tengo creadas. 
+		-D ramaEliminar: para eliminar una rama se agrega el parametro.
 
 * git checkout nombreRama: para cambiarme de rama.
-
-* git branch -l: para listar las ramas que tengo creadas. 
 
 * git merge nombreRama: para cambiarme fusionar cambios en las ramas debo de estar en la rama que quiero que 
 	que continue su ciclo de vida y llamar a la rama que quiero fusionar.
@@ -89,7 +89,35 @@ Comandos:
 
 * gitk: me abre una interfaz grafica relacionada con las ramas.
 
-*git clone urlRepositorioRemoto: Para Clonar un repositorio remoto.
+* git clone urlRepositorioRemoto: Para Clonar un repositorio remoto.
+
+* git clone urlRepositorioRemoto: Para Clonar un repositorio remoto.
+
+* git rebase ramaparameterlelahistoria: Es solo para repositorios locales nunca se debe hacer para
+	remotos porque reescribe la historia. 
+	Me lleva la historia de la rama en la que estoy a la rama que pongo en el comando. 
+	1. Primero se hace en la rama que voy a eliminar. 
+	2. Despues se hace en la rama que va a quedar en el proyecto.
+	
+	Es para hacer cambios silenciosos en una rama.
+	
+	* Es mala practica porque me afecta la historia del proyecto no se cuando arranca la rama
+	nueva y cuando termina.
+
+* git stash: comando para guardar los cambios los cuales aun no estan en commit.
+		list: para listar lo que tengo guardado en el stash
+		pop: para que me saque los cambios guardados. 
+		branch nombrerRamaNueva: para poner mis cambios directamente en una rama nueva.
+		drop: me borra los cambios que esten en el stash sin aplicarlos en ninguna rama.
+
+* git clean --dry-run: me muestra cuales archivos borraria.
+	-f: para llevar acabo del borrado. 
+	
+	Git no borra las carpetas borra los archivos.
+	no borra los arhivos que esten involucrados en el gitignore.
+	
+	Para limpiar el proyecto de archivos que no queremos, o que agregamos por error 
+
 
 ----- GENERAR UNA LLAVE PUBLICA/PRIVADA -----
 1. En la consola ssh-keygen -t rsa -b 4096 -C "crduarte99@gmail.com"
@@ -110,3 +138,7 @@ Anotaciones
 		antes de hacer los commits, realizamos los commits de nuestros cambios y hacemos el push,
 		si debemos unir nuestros cambios con alguna rama nos pasamos a la rama que queremos llevar
 		los cambios, la actualizamos y hacemos merge con la rama que contiene nuestros cambios. 
+
+Pagina para editar archivos markDown dm:
+https://pandao.github.io/editor.md/en.html
+https://getemoji.com/
