@@ -118,6 +118,25 @@ Comandos:
 	
 	Para limpiar el proyecto de archivos que no queremos, o que agregamos por error 
 
+* git cherry-pick idCommit: es para traerme solamente un commit, el commit que 
+	se especifique.
+	
+	Es una mala practica porque se reconstruye la historia, es mejor hacer el 
+	trabajo duro y usar merge.
+	
+* git reflog: me muestra el historial de todo el proyecto
+	las cosas que se han eliminado etc. todo tod. 
+
+* git reset --soft idcommit: Te recuperará todos los cambios que tengas diferentes al idcommit, los agregará al staging area y moverá el head al idcommit
+	--hard idcommit: me lleva al commit que especifique y elimina cualquier cambio que tenga.
+	
+	Es mala practica hacer git reset.
+	
+* git commit --amend: me permite agregar cambios pendientes al ultimo commit
+	de archivos o mensajes en el commit para agregar los archivos hay que hacer
+	previamente un git add.
+
+
 
 ----- GENERAR UNA LLAVE PUBLICA/PRIVADA -----
 1. En la consola ssh-keygen -t rsa -b 4096 -C "crduarte99@gmail.com"
