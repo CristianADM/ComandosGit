@@ -29,6 +29,12 @@ Comandos:
 	en los archivos especificos
 	--all --graph me muestra un grafico de las ramas y de los commits.
 	--all --graph --decorate --oneline me muestra todo mas comprimido.
+	-S "palabra": para buscar una palabra en los commits.
+	
+* git shortlog: me muestra los commits por persona del equipo.
+	-sn: me cuenta los commits por persona.
+	--all: para que sean todos. 
+	--no-merges: para que no me tenga en cuenta los merges. 
 
 * git show nombrearchivo: me muestra los cambios que ha tenido el archivo a partir del ultimo commit. 
 
@@ -47,6 +53,8 @@ Comandos:
 * git branch nombreRama: para crear una rama nueva.
 * git branch -l: para listar las ramas que tengo creadas. 
 		-D ramaEliminar: para eliminar una rama se agrega el parametro.
+		-r: puedo ver las ramas remotas. 
+		-a: me muestras todas las locales y las remotas.
 
 * git checkout nombreRama: para cambiarme de rama.
 
@@ -135,8 +143,16 @@ Comandos:
 * git commit --amend: me permite agregar cambios pendientes al ultimo commit
 	de archivos o mensajes en el commit para agregar los archivos hay que hacer
 	previamente un git add.
-
-
+	
+* git grep "paralabra": Comando que me ayuda a buscar una palabra en el proyecto.
+	-n "palabra": con el parametro -n me dice en que linea de que archivo esta la palabra buscada.
+	-c "palabra": me cuenta las veces que uso la palabra en los archivos que se encuentra.
+	
+* git blame nombrearchivo: para ver quien ha hecho que en el archivo.
+	-C nombrearchivo: indente mejor lo que muestra.
+	nombrearchivo -L35,53: me muestra solo las lineas que especifique.
+	
+* git comando --help: me muestra las diferentes opciones que tiene un comando en github.
 
 ----- GENERAR UNA LLAVE PUBLICA/PRIVADA -----
 1. En la consola ssh-keygen -t rsa -b 4096 -C "crduarte99@gmail.com"
